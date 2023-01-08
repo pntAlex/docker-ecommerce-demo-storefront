@@ -2,6 +2,14 @@ const { withStoreConfig } = require("./store-config")
 const store = require("./store.config.json")
 
 module.exports = withStoreConfig({
+  serverRuntimeConfig: {
+    // Will only be available on the server side
+    apiUrl: 'http://backend:9000'
+  },
+  publicRuntimeConfig: {
+    // Will be available on both server and client
+    apiUrl: 'http://localhost:9000'
+  },
   features: store.features,
   reactStrictMode: true,
   images: {
