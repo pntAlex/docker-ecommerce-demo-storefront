@@ -8,8 +8,11 @@ WORKDIR /app/storefront
 COPY package.json .
 COPY yarn.* .
 
-# Run the apk update command to update package information and then install the dependencies listed in the yarn lock file
-RUN apk update && yarn
+# Run the apk update command to update package information
+RUN apk update
+
+# Install the dependencies
+RUN yarn --network-timeout 1000000
 
 # Copy all files in the current directory (.) to the working directory in the container
 COPY . .
