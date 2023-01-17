@@ -15,4 +15,4 @@ RUN apk update && yarn
 COPY . .
 
 # Set the default command to run the application in development mode
-CMD [ "yarn", "dev"]
+ENTRYPOINT [ "yarn", "dev"]
