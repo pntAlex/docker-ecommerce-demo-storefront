@@ -10,6 +10,7 @@ COPY yarn.* .
 
 # Run the apk update command to update package information
 RUN apk update
+RUN apk add --no-cache python2 g++ make
 
 # Install the dependencies
 RUN yarn --network-timeout 1000000
